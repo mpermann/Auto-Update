@@ -23,7 +23,7 @@ SYMBOL is the unicode string for the heart emoji, because we can
 
 MESSAGE is the actual message you wish to display to the end user
 
-COMPLETE is the message that will pop when the patch is complete
+COMPLETE is the message that will pop when the update is complete
 
 FORCEMSG = the template message to pop when doing a forced update for security reasons
 """
@@ -50,22 +50,22 @@ FORCEQUIT = sys.argv[8].lower()
 # heart emoji, because we love Snowflake!
 SYMBOL = u"\u2764\ufe0f"
 # message to prompt the user to quit and update an app
-MESSAGE = """Greetings Employee:
+MESSAGE = """Greetings Heartland Staff:
 
-I.T. would like to patch {0}.  Please click on the "OK" button to continue, this will prompt you to quit your application and save your work.
+The IT Department would like to update {0}.  Please click on the "OK" button to continue, this will prompt you to quit your application and save your work.
 
 You may click "Cancel" to delay this update.
 
-{1} I.T.
+{1} IT Department
 """.format(
     APPNAME, SYMBOL.encode("utf-8")
 )
 
-FORCEMSG = """Greetings Employee:
+FORCEMSG = """Greetings Heartland Staff:
 
-I.T. would like to patch {0}.  This is an emergency patch and the application will be quit to deploy security patches.
+The IT Department needs to update {0}.  This is an emergency update and the application will be quit to deploy the update.
 
-{1} I.T.
+{1} IT Department
 """.format(
     APPNAME, SYMBOL.encode("utf-8")
 )
@@ -74,7 +74,7 @@ I.T. would like to patch {0}.  This is an emergency patch and the application wi
 # message to notify the user upon completion
 COMPLETE = """Thank You!
 
-{0} has been patched on your system.  You may relaunch it now if you wish
+{0} has been updated on your computer.  You may relaunch it now if you wish.
 """.format(
     APPNAME
 )
@@ -97,7 +97,7 @@ def check_if_running(bid):
 def user_prompt(prompt):
     """simple jamf helper dialog box"""
     # set the path to your custom branding, it will default to the warning sign if your branding is not found
-    icon = ""
+    icon = "/Library/Application Support/PCC/Images/PCC1Logo.icns"
     # test to see what icons are available on the file system
     if not os.path.exists(icon):
         # default fail over icon in case our custom one does not exist
@@ -139,7 +139,7 @@ def user_prompt(prompt):
 def force_quit_prompt(prompt):
     """jamf helper dialog to inform of the force quit"""
     # Custom branding icon path goes here for Force Quit work flows
-    icon = ""
+    icon = "/Library/Application Support/PCC/Images/PCC1Logo.icns"
     # test to see what icons are available on the file system
     if not os.path.exists(icon):
         # default fail over icon in case our custom one does not exist
@@ -217,7 +217,7 @@ def run_update_policy(event):
 
 
 def notify_on_completion():
-    """notification that the patch is complete"""
+    """notification that the update is complete"""
     # probably do not need this, can most likely reuse prior dialog box function
     # this is just a place holder for now
     pass

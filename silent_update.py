@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """
-This script will silently patch any app by bundle ID, but only if the app itself is not running
+This script will silently update any app by bundle ID, but only if the app itself is not running
 you must supply the bundle ID of the app to check and the policy event manual trigger for jamf as
 positional parameters 4 and 5
 

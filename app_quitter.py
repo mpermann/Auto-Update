@@ -50,7 +50,7 @@ FORCEQUIT = sys.argv[8].lower()
 # heart emoji, because we love Snowflake!
 SYMBOL = u"\u2764\ufe0f"
 # message to prompt the user to quit and update an app
-MESSAGE = """Greetings Heartland Staff:
+MESSAGE = """Greetings PERMANNent Computer Consulting Staff:
 
 The IT Department would like to update {0}.  Please click on the "OK" button to continue, this will prompt you to quit your application and save your work.
 
@@ -61,7 +61,7 @@ You may click "Cancel" to delay this update.
     APPNAME, SYMBOL.encode("utf-8")
 )
 
-FORCEMSG = """Greetings Heartland Staff:
+FORCEMSG = """Greetings PERMANNent Computer Consulting Staff:
 
 The IT Department needs to update {0}.  This is an emergency update and the application will be quit to deploy the update.
 
